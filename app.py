@@ -19,9 +19,10 @@ import sys
 print ("Start...")
 #print ("Directory")
 #print(os.path.dirname(sys.path[0]))
-filename = os.path.dirname(sys.path[0]) + "\predictive_maintenance.csv"
-print("filename : " + filename)
-mydata=pd.read_csv(os.path.dirname(sys.path[0]) + "\predictive_maintenance.csv")
+#filename = os.path.dirname(sys.path[0]) + "\predictive_maintenance.csv"
+#print("filename : " + filename)
+#mydata=pd.read_csv(os.path.dirname(sys.path[0]) + "\predictive_maintenance.csv")
+mydata=pd.read_csv("predictive_maintenance.csv")
 
 mydata1 = mydata.pop('failure') # remove column failure and store it in mydata1
 mydata['failure']=mydata1 
