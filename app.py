@@ -13,10 +13,15 @@ from imblearn.over_sampling import SMOTE
 from imblearn.over_sampling import RandomOverSampler
 import streamlit as st
 import plotly.graph_objects as go
+import os
+import sys
 
 print ("Start...")
-
-mydata=pd.read_csv("predictive_maintenance.csv")
+#print ("Directory")
+#print(os.path.dirname(sys.path[0]))
+filename = os.path.dirname(sys.path[0]) + "\predictive_maintenance.csv"
+print("filename : " + filename)
+mydata=pd.read_csv(os.path.dirname(sys.path[0]) + "\predictive_maintenance.csv")
 
 mydata1 = mydata.pop('failure') # remove column failure and store it in mydata1
 mydata['failure']=mydata1 
@@ -135,10 +140,10 @@ class StreamlitApp:
 		print ('values_to_predict')
 		print (values_to_predict)
 		prediction = self.model.predict(values_to_predict)
-		prediction_str = 'Failure'
-		prediction_value = "NON-FAILURE"
+		prediction_str = 'FAILURE'
+		prediction_value = "FALSE"
 		if prediction[0] == 1 :
-			prediction_value = "FAILURE" 
+			prediction_value = "TRUE" 
 		probabilities = self.model.predict_proba(values_to_predict)
 		print('prediction')
 		print(prediction[0])
