@@ -4,5 +4,5 @@ seaborn==0.11.1
 pandas==1.2.4
 plotly==5.3.1
 scikit_learn==0.24.1
-imblearn==0.8.1
+imblearn==0.0
 
