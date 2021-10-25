@@ -90,8 +90,8 @@ class StreamlitApp:
 		cols = [col for col in feature_cols]
 		st.sidebar.markdown('<p class="header-style">Predictive Maintenance Classification</p>',unsafe_allow_html=True)
 		form = st.sidebar.form(key='my_form')
-		#pm_date = form.text_input(cols[0], "1/5/2015")
-		#pm_device  = form.text_input(cols[1], "S1F0RRB1")
+		pm_date = form.text_input(cols[0], "1/5/2015")
+		pm_device  = form.text_input(cols[1], "S1F0RRB1")
 		pm_metric1 = form.text_input(cols[2], "48467332")
 		pm_metric2 = form.text_input(cols[3], "64776")
 		pm_metric3 = form.text_input(cols[4], "0")
